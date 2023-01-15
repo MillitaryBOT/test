@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mon quizz sur les Youtubeurs</title>
+</head>
+<body>
+  <!-- Titre de la page -->
+  <h1>Mon quizz sur les Youtubeurs</h1>
+  
+  <!-- Début du formulaire pour le quizz -->
+  <form id="quizz">
+    <!-- Première question -->
+    <p>Question 1 : Qui est le Youtubeur le plus populaire en France en 2021 ?</p>
+    <input type="radio" name="question1" value="Squeezie">Squeezie<br>
+    <input type="radio" name="question1" value="Cyprien">Cyprien<br>
+    <input type="radio" name="question1" value="Norman">Norman<br>
+    <input type="radio" name="question1" value="EnjoyPhoenix">EnjoyPhoenix<br>
+    <br>
+    <!-- Deuxième question -->
+    <p>Question 2 : Qui est le deuxième Youtubeur le plus populaire en France en 2021 ?</p>
+    <input type="radio" name="question2" value="Monsieur Dream">Monsieur Dream<br>
+    <input type="radio" name="question2" value="Amixem">Amixem<br>
+    <input type="radio" name="question2" value="Joueur Du Grenier">Joueur Du Grenier<br>
+    <input type="radio" name="question2" value="Seb la Frite">Seb la Frite<br>
+    <br>
+    <!-- Bouton pour vérifier les réponses -->
+    <button type="button" onclick="verifier()">Vérifier les réponses</button>
+  </form>
+  <!-- Élément pour afficher le résultat -->
+  <p id="resultat"></p>
+  
+  <script>
+    // Fonction pour vérifier les réponses
+    function verifier() {
+      // Initialisation du score à 0
+      var score = 0;
+      // Récupération de la réponse choisie pour la première question
+      var question1 = document.querySelector('input[name="question1"]:checked').value;
+      // Vérification si la réponse est correcte pour la première question
+      if (question1 === "Squeezie") {
+        // Incrémentation du score si la réponse est correcte
+        score++;
+      }
+      // Récupération de la réponse choisie pour la deuxième question
+      var question2 = document.querySelector('input[name="question2"]:checked').value;
+      // Vérification si la réponse est correcte pour la deuxième question
+      if (question2 === "Monsieur Dream") {
+        // Incrémentation du score si la réponse est correcte
+        score++;
+      }
+            // Affiche le score obtenu à l'utilisateur
+      document.getElementById("resultat").innerHTML = "Vous avez " + score + " bonne(s) réponse(s).";
+    }
+  </script>
+</body>
+</html>
